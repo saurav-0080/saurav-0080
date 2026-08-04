@@ -1,6 +1,6 @@
 {
   "username": "saurav-0080",
-  "generated_at": "2026-08-03T10:04:27.275915+00:00",
+  "generated_at": "2026-08-04T09:05:51.428977+00:00",
   "days": [
     {
       "date": "2025-08-03",
@@ -1412,7 +1412,7 @@
     },
     {
       "date": "2026-07-21",
-      "level": 2
+      "level": 1
     },
     {
       "date": "2026-07-22",
@@ -1428,11 +1428,11 @@
     },
     {
       "date": "2026-07-25",
-      "level": 3
+      "level": 2
     },
     {
       "date": "2026-07-26",
-      "level": 3
+      "level": 2
     },
     {
       "date": "2026-07-27",
@@ -1456,21 +1456,25 @@
     },
     {
       "date": "2026-08-01",
-      "level": 3
+      "level": 2
     },
     {
       "date": "2026-08-02",
-      "level": 2
+      "level": 1
     },
     {
       "date": "2026-08-03",
       "level": 4
+    },
+    {
+      "date": "2026-08-04",
+      "level": 0
     }
   ],
   "stats": {
     "total_active_days": 6,
     "longest_streak": 3,
-    "current_streak": 3,
+    "current_streak": 0,
     "best_day": {
       "date": "2026-08-03",
       "level": 4
