@@ -34,7 +34,8 @@ hero=(f'<circle cx="52" cy="54" r="5" fill="{BLUE}" style="animation:pulse 2.4s 
  + f'<text x="520" y="246" font-size="14" class="mono" fill="{BLUE}">github.com/saurav-0080 ↗</text>')
 (OUT/"hero.svg").write_text(svg(880,290,hero),encoding="utf-8")
 
-# TILES
+# TILES (combined into one strip so GitHub cannot wrap them)
+TILES=[]
 def tile(fn,label,color,num,suffix,text,href_hint,ink=None,delay=0):
     ink=ink or "#FFFFFF"
     body=(f'<rect x=".5" y=".5" width="279" height="223" rx="18" fill="{color}"/>'
@@ -43,7 +44,7 @@ def tile(fn,label,color,num,suffix,text,href_hint,ink=None,delay=0):
      f'<text x="26" y="136" font-size="15" class="mono" fill="{ink}">{suffix}</text>'
      + lines(text,26,164,12.5,17,"sans",ink)
      + f'<text x="254" y="40" font-size="16" class="mono" fill="{ink}">{href_hint}</text>')
-    (OUT/fn).write_text(svg(280,224,body),encoding="utf-8")
+    TILES.append(body)
 tile("build.svg","BUILD",BLUE,"88+","tests in FileFlux",["Python file organizer with dedup,","undo, CLI, Docker and CI. Docker","and testing on ORCA (SIH)."],"↗",delay=.5)
 tile("create.svg","SHIP",RED,"3","tools",["Docker, Jenkins, Selenium:","containers, CI and test","automation."],"",delay=.65)
 tile("learn.svg","LEARN",YEL,"17","weeks, Python backend",["B.Tech CSE (Data Science), 2027.","Now: async Python, building","Shadow Proxy."],"",ink=INK,delay=.8)
@@ -56,3 +57,9 @@ repo=(f'<text x="26" y="46" font-size="30" class="serif" fill="{INK}">FileFlux</
  f'<text x="130" y="141" font-size="12" class="mono" fill="{MUTED}">88+ tests</text>')
 (OUT/"repo_1.svg").write_text(svg(430,168,repo),encoding="utf-8")
 print("done:", sorted(p.name for p in OUT.iterdir()))
+
+strip="".join(f'<g transform="translate({i*300},0)">{b}</g>' for i,b in enumerate(TILES))
+(OUT/"tiles.svg").write_text(
+ f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 224" width="880" height="224" role="img" aria-label="Build: 88+ tests in FileFlux. Ship: Docker, Jenkins, Selenium. Learn: Python backend roadmap.">'
+ f'<style>{BASE}</style>{strip}</svg>',encoding="utf-8")
+print("tiles.svg written")
