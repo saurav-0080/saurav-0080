@@ -1,16 +1,3 @@
-<div align="center">
-
-<h3><code>saurav@github ~ $ ./contributions.sh</code></h3>
-<img src="./contrib-heatmap.svg" width="860" />
-
-<br><br>
-
-<h3><code>saurav@github ~ $ whoami</code></h3>
-<table>
-  <tr>
-    <td valign="top"><img src="./avi-ascii.svg" width="370" /></td>
-    <td valign="top"><img src="./info-card.svg" width="490" /></td>
-  </tr>
-</table>
-
-</div>
+<img src="cards/hero.svg" width="100%" alt="Saurav Chaudhary, Python and DevOps">
+<img src="cards/tiles.svg" width="100%" alt="Build: 88+ tests in FileFlux. Ship: Docker, Jenkins, Selenium. Learn: Python backend roadmap.">
+<a href="https://github.com/saurav-0080/FileFlux"><img src="cards/repo_1.svg" width="49%" alt="FileFlux repository"></a>
